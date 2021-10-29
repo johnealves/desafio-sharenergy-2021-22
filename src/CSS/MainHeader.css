@@ -1,0 +1,14 @@
+.main-header-container {
+  background-color: #fff;
+  padding: 20px;
+  /* margin-left: -150px; */
+  width: 100%;
+}
+
+.main-header-container a {
+  color: #7e7a75;
+}
+
+.main-header-container a:hover {
+  color: #000;
+}

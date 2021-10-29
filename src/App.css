@@ -1,38 +1,74 @@
+html {
+	background: transparent;
+	border: 0;
+  box-sizing: border-box;
+	font-size: 100%;
+	font-weight: normal;
+	margin: 0;
+  overflow-y: scroll;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+  background-color:#ece5dd; opacity:0.85;background:linear-gradient(to right, #ece5dd 0%,#6ee7e7 100%);
+}
+
+ul {list-style: none;}
+
+button {
+  width: auto; overflow: visible;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  background: transparent;
+  color: black;
+  font-size: 100%;
+  margin: 0.5rem;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: baseline;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttons-controller {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons-controller button {
+  margin: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.graphic-container {
+  max-width: 800px;
+  height: 100vh;
+}
+
+@media screen and (min-width: 1000px) {
+  .clients-container, .new-client-container {
+    margin-left: 150px;
   }
 }
+
+@media screen and (max-width: 600px) {
+  /* body {
+    margin: 1rem;
+  } */
+
+  .buttons-controller {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+} 
+

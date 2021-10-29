@@ -1,0 +1,17 @@
+.new-client-container {
+  align-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  border: 2px solid rgb(15, 123, 211);
+  border-radius: 15px;
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  height: 250px;
+  width: 400px;
+  z-index: 100;
+}
+
+.form-new-client {
+
+}
