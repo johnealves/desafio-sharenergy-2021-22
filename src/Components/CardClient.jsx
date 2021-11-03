@@ -1,26 +1,28 @@
 import React from "react";
-import { useHistory } from "react-router";
-import dadosClientes from "../dadosClientes.json";
+// import { useHistory } from "react-router";
 import Button from "@material-ui/core/Button" ;
-import AddIcon from '@material-ui/icons/Add';
+// import AddIcon from '@material-ui/icons/Add';
 import "../CSS/CardClient.css";
-import handleValueEnergy from "../utils/valorGerado";
+import { useEnergyProvider } from "../Context/EnergyProvider";
+import GeneratedValue from "../utils/GeneratedValue";
+import api from "../Services/api";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
-const CardClient = ({ client, handleUpdateForm, setUpdate }) => {
+const CardClient = ({ client, match }) => {
   const history = useHistory()
+  const { powerPlant } = useEnergyProvider()
 
-  const handleUpdateClient = () => {
-    handleUpdateForm()
-    setUpdate(client.numeroCliente)
-  }
-
-  const handleDeleteClient = (id) => {
-    dadosClientes.forEach((usuario, index) => {
-      if (client.numeroCliente == usuario.numeroCliente) {
-        dadosClientes.splice(index, 1);
-        history.push("/clients")
+  const handleDeleteClient = () => {
+    const resp = window.confirm(
+      `Tem certeza de deseja excluir ${client.nomeCliente}, esta ação não podera ser desfeita.`)
+    if (resp === true) {
+      const id = client._id
+      api.delete(`/client/${id}`)
+        .then(resp => console.log(resp))
+        .catch(err => console.log(err))
+      window.location.reload();
       }
-    })
   }
 
   return(
@@ -29,13 +31,12 @@ const CardClient = ({ client, handleUpdateForm, setUpdate }) => {
         <div>
           <span>#{ client.numeroCliente }</span>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          {/* <Link to={`/client/${client.numeroCliente}`}> */}
           <span>
             { client.nomeCliente }
           </span>
         </div>
         <div>
-          <Button onClick={ handleUpdateClient }>Atualizar</Button>
+          <Button component={Link} to={ `/client/update/${client._id}` }>Atualizar</Button>
           <Button onClick={ handleDeleteClient }>deletar</Button>
         </div>
       </section>
@@ -47,16 +48,21 @@ const CardClient = ({ client, handleUpdateForm, setUpdate }) => {
       <div>
         <div className="usina-controller">
           Usinas:
-          <Button variant="contained" size="small" startIcon={<AddIcon />}>
-            Adicionar Usina
-          </Button>
         </div>
-        {client.usinas.map((usina) => {
+        {client.usinas.map(({ usinaId, percentualDeParticipacao }, index) => {
           return (
-            <>
-              <p>id: { usina.usinaId } Participação: { usina.percentualDeParticipacao }%</p>
+            <div key={ index }>
+              <p className="power-plant-by-client">
+                <span>id: { usinaId }&nbsp;&nbsp;Participação: { percentualDeParticipacao }%</span>
+                <span>
+                  Valor Gerado(Dia): {
+                    GeneratedValue(percentualDeParticipacao)
+                      .toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+                  }
+                </span>
+              </p>
               
-            </>
+            </div>
           )
         })}
       </div>

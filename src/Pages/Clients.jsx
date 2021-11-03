@@ -1,36 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CardClient from "../Components/CardClient";
-import dadosClientes from "../dadosClientes.json";
 import Button from "@material-ui/core/Button" ;
 import AddIcon from '@material-ui/icons/Add';
-import FormNewClient from "../Components/FormNewClient";
 import "../CSS/Clients.css";
-import FormUpdateCliente from "../Components/FormUpdateClient";
-import handleValueEnergy from "../utils/valorGerado";
+import api from "../Services/api";
+import { Link } from "react-router-dom";
 
 const Clients = () => {
-  const [addForm, setAddForm] = useState(false)
-  const [updateForm, setUpdateForm] = useState(false)
-  const [clientUpdate, setClientUpdate] = useState(0)
+  const [dataClients, setDataClients] = useState([]);
 
-  const handleAddForm = () => setAddForm(!addForm);
-  const handleUpdateForm = () => setUpdateForm(!updateForm);
+  useEffect(() => {
+    const fecthData = async() => {
+      const dados = await api.get("/clients")
+        .then((response) => response.data)
+        .catch((err) => console.log(err));
+        setDataClients(dados);
+    }
+    fecthData();
+  }, []);
 
   return(
     <div className="clients-container">
       <h1>Clientes</h1>
-      <p>Valor gerado: { handleValueEnergy() }</p>
-      <Button onClick={ handleAddForm } variant="outlined" startIcon={<AddIcon />}>
+      <Button 
+        variant="outlined"
+        startIcon={<AddIcon />}
+        component={ Link }
+        to="/signup"
+      >
         Adicionar cliente
       </Button>
-      {(addForm) && <FormNewClient onclick={ handleAddForm } />}
-      {(updateForm) && <FormUpdateCliente 
-        onclick={ handleUpdateForm }
-        idUpdate={ clientUpdate }
-      />}
       <ul>
-        { dadosClientes.map(
-          (client) => <CardClient client={ client } handleUpdateForm={ handleUpdateForm } setUpdate={ setClientUpdate }/>) }  
+        { dataClients.map(
+          (client, i) => <CardClient client={ client } key={ i } />) }  
       </ul>
     </div>
   )

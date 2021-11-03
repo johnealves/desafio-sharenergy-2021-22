@@ -27,3 +27,8 @@
   transform: scale(1.05);
   transition: 0.5s;
 } */
+
+.power-plant-by-client {
+  display: flex;
+  justify-content: space-between;
+}

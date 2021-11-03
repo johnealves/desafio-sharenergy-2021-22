@@ -56,7 +56,7 @@ a {
 }
 
 @media screen and (min-width: 1000px) {
-  .clients-container, .new-client-container {
+  .clients-container, .new-client-container, .graphic-container{
     margin-left: 150px;
   }
 }
@@ -70,5 +70,4 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
-} 
-
+}
