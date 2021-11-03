@@ -1,6 +1,5 @@
 import { Button, FormControl, List, ListItem, TextField } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
-import dadosClientes from "../dadosClientes.json";
 import "../CSS/Clients.css";
 import api from "../Services/api";
 import { useHistory } from "react-router";
@@ -29,7 +28,7 @@ const FormClient = ({ match: { params: { id } } }) => {
         setTypeForm("update")
       })
     }
-  }, [])
+  }, [id])
 
   const handleClientData = ({ target: { name, value } }) => {
     setClientData({ ...clientData, [`${name}`]: value })

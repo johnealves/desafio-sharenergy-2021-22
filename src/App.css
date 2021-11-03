@@ -62,10 +62,9 @@ a {
 }
 
 @media screen and (max-width: 600px) {
-  /* body {
-    margin: 1rem;
-  } */
-
+  .main-header-container img {
+    width: 9rem;
+  }
   .buttons-controller {
     display: grid;
     grid-template-columns: 1fr 1fr;

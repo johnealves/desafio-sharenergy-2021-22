@@ -1,7 +1,9 @@
 .main-header-container {
-  background-color: #fff;
+  align-items: center;
+  background-color: rgb(250, 246, 246);
   padding: 20px;
-  /* margin-left: -150px; */
+  display: flex;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -11,4 +13,8 @@
 
 .main-header-container a:hover {
   color: #000;
+}
+
+.main-header-container img {
+  max-width: 12rem;
 }

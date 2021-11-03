@@ -28,7 +28,7 @@ const Home = () => {
 
   return(
     <div className="graphic-container">
-      <div className="usina-container">
+      <div className="usina">
         <h1>Usina 1</h1>
         <ResponsiveContainer width="100%" height={250}>
           <AreaChart data={usina}
@@ -55,6 +55,15 @@ const Home = () => {
           <Button name="corrente_A" variant="contained" onClick={ handleMetric }>Corrente</Button>
           <Button name="potencia_kW" variant="contained" color="success" onClick={ handleMetric }>Potência</Button>
           <Button name="temperatura_C" variant="contained" color="error" onClick={ handleMetric }>Temperatura</Button>
+          <section>
+            <h3>Energia Fotovoltaica</h3>
+            <div>
+              <div>
+                <p>O Brasil é um país privilegiado por receber elevados índices de radiação solar, o que eleva o potencial gerador da energia fotovoltaica.</p>
+                <p>A energia fotovoltaica é barata, abundante, limpa e confiável, caracterizando-se por uma fonte de energia alternativa aos combustíveis fósseis, que são os maiores responsáveis pelas mudanças climáticas no planeta</p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>

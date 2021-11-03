@@ -1,18 +1,11 @@
 import React from "react";
-// import { useHistory } from "react-router";
 import Button from "@material-ui/core/Button" ;
-// import AddIcon from '@material-ui/icons/Add';
-import "../CSS/CardClient.css";
-import { useEnergyProvider } from "../Context/EnergyProvider";
+import { Link } from "react-router-dom";
 import GeneratedValue from "../utils/GeneratedValue";
 import api from "../Services/api";
-import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
+import "../CSS/CardClient.css";
 
-const CardClient = ({ client, match }) => {
-  const history = useHistory()
-  const { powerPlant } = useEnergyProvider()
-
+const CardClient = ({ client }) => {
   const handleDeleteClient = () => {
     const resp = window.confirm(
       `Tem certeza de deseja excluir ${client.nomeCliente}, esta ação não podera ser desfeita.`)
@@ -22,7 +15,7 @@ const CardClient = ({ client, match }) => {
         .then(resp => console.log(resp))
         .catch(err => console.log(err))
       window.location.reload();
-      }
+    }
   }
 
   return(
@@ -31,19 +24,13 @@ const CardClient = ({ client, match }) => {
         <div>
           <span>#{ client.numeroCliente }</span>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <span>
-            { client.nomeCliente }
-          </span>
+          <span>{ client.nomeCliente }</span>
         </div>
         <div>
           <Button component={Link} to={ `/client/update/${client._id}` }>Atualizar</Button>
           <Button onClick={ handleDeleteClient }>deletar</Button>
         </div>
       </section>
-      {/* </Link> */}
-      {/* <div>
-        <Button variant="outlined" color="error" startIcon={<DeleteIcon />}></Button>
-      </div> */}
       <hr/>
       <div>
         <div className="usina-controller">
@@ -54,17 +41,15 @@ const CardClient = ({ client, match }) => {
             <div key={ index }>
               <p className="power-plant-by-client">
                 <span>id: { usinaId }&nbsp;&nbsp;Participação: { percentualDeParticipacao }%</span>
-                <span>
+                {(usinaId === 1) && <span>
                   Valor Gerado(Dia): {
                     GeneratedValue(percentualDeParticipacao)
                       .toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
                   }
-                </span>
+                </span>}
               </p>
-              
             </div>
-          )
-        })}
+          )})}
       </div>
     </li>
   )
