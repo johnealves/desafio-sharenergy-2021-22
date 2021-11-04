@@ -22,6 +22,16 @@ Procuramos por pessoas dinâmicas e que queiram estar aprendendo sempre. Nossa e
 
 Criar uma aplicação Web que atenda às demandas listadas abaixo. O aplicativo deve apresentar uma interface amigável, bonita e limpa, na qual o usuário possa navegar através de botões.
 
+# Dependência
+
+  Esta dependências são utilizadas para roda aplicação, alem das dependências padrão do React.
+
+  - Material-ui/core": "^5.0.0-beta.5",
+  - Material-ui/icons": "^4.11.2",
+  - Axios": "^0.24.0",
+  - react-router-dom": "^5.3.0",
+  - Recharts": "^2.1.5",
+
 # A aplicação
 
 Este projeto foi realizado utilizando a versão LTS 16.13.0 do Node e o MongoDB 5.0.3.
@@ -30,7 +40,6 @@ Para rodar este projeto foi criado um backend para alimentar a aplicação que u
 Para rodar este projeto corretamente é necessario:
  - Clonar o repositorio do backend com o comando "git clone git@github.com:johnealves/usina-fotovoltaica.git"
  - Iniciar o MongoDB no sitema local.
- - Para popular o banco de dados é necessario utilizar co comando "npm run db:reset", isso ira gerar um banco de dados chamado sharenergy-johnealves com os dados dos arquivos dadosUsina.json e dadosUsuario.json. Caso os banco ja exista os dados serão resetados ao estado original dos arquivos de referencia.
- - Na raiz do repositorio clonado digite o comando "npm start" esse comando ira inicia a aplicação na porta 3001.
+ - Na raiz do repositorio clonado digite o comando "npm start" esse comando ira inicia a aplicação na porta 3001, isso tambem ira criar um database no mongo com o nome "sharenergy-johnealves", caso ja exista os dados do banco serão resetados
  - Com o backend rodando va para pasta raiz do repositorio desafio-sharenergy-2021-22 mude para a branch "johnealves" e rode o projeto com o comando npm start.
  (obs.: No frontend va ate pasta Services, lá tera um arquivo chamado api.jsx, neste arquivo a uma variavel chamada localhost, certifique-se de que esta variavel tem o endereço localhost do sistema local para que o backend funcione corretamente).
