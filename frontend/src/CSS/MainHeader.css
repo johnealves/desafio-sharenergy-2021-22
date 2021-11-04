@@ -1,0 +1,21 @@
+.main-header-container {
+  align-items: center;
+  background-color: rgb(250, 246, 246);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-header-container a:hover {
+  color: #000;
+}
+
+.main-header-container img {
+  max-width: 12rem;
+}
+
+/* .login-button {
+  background-color: #0D3131;
+} */
+

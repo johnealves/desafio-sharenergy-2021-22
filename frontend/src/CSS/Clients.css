@@ -1,0 +1,12 @@
+.new-client-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-new-client .MuiOutlinedInput-root {
+  margin-bottom: 1rem;
+}
+
+.button-add-power-plant {
+  height: 56px;
+}

@@ -1,0 +1,21 @@
+.login-container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  background-color: azure;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 400px;
+  margin-top: 2rem;
+  padding: 20px;
+}
+
+.login-container h1 {
+  color: brown;
+  text-align: center;
+}
+

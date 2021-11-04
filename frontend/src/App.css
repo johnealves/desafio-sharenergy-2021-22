@@ -1,0 +1,95 @@
+html {
+	background: transparent;
+	border: 0;
+  box-sizing: border-box;
+	font-size: 100%;
+	font-weight: normal;
+	margin: 0;
+  overflow-y: scroll;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+  background-color:#ece5dd; opacity:0.85;background:linear-gradient(to right, #ece5dd 0%,#6ee7e7 100%);
+}
+
+ul {list-style: none;}
+
+button {
+  width: auto; overflow: visible;
+}
+
+.App {
+  text-align: center;
+}
+
+a {
+  background: transparent;
+  color: black;
+  font-size: 100%;
+  margin: 0.5rem;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+}
+
+.buttons-controller {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buttons-controller button {
+  margin: 0.5rem;
+}
+
+.graphic-container {
+  max-width: 800px;
+  height: 100vh;
+}
+
+a {
+  color: #7e7a75;
+}
+
+@media screen and (min-width: 1000px) {
+  .clients-container, .new-client-container, .graphic-container{
+    margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  ul {
+    padding: 0;
+  }
+
+  .main-header-container img {
+    width: 9rem;
+  }
+  .buttons-controller {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .usina-controller {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .client-data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MuiList-root.MuiList-padding.css-h4y409-MuiList-root li{
+    display: flex;
+    flex-direction: column;
+  }
+}
