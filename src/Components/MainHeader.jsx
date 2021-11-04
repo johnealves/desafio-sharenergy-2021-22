@@ -26,8 +26,9 @@ const MainHeader = () => {
         <img src={ logo } alt=""logo-sharenergy/>
       </Link>
       <nav>
-        <Link exact to="/">Inicio</Link>
-        {(user && user.role === "admin") && <Link exact to="/clients">Clientes</Link>}
+        {(user && user.role === "admin") && (
+          <><Link exact to="/">Inicio</Link><Link exact to="/clients">Clientes</Link></>
+        )}
         {(!user) 
           ? (<Button 
               sx={{ borderRadius: "20px", backgroundColor: "#389393", color: "#fff" }}
