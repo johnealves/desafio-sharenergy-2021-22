@@ -4,6 +4,7 @@ import EnergyContext from "./EnergyContext"
 
 export const EnergyProvider = ({ children }) => {
   const [powerPlant, setPowerPlant] = useState([])
+  const [userActive, setUserActive] = useState({})
 
   useEffect(() => {
     const fetchData = async() => {
@@ -11,10 +12,14 @@ export const EnergyProvider = ({ children }) => {
       setPowerPlant([...power])
     }
     fetchData()
+    localStorage.getItem("testTokenSharenergy");
+    setUserActive(JSON.parse(localStorage.getItem("testUserSharenergy")));
   }, [])
 
   const context = {
-    powerPlant
+    powerPlant,
+    userActive,
+    setUserActive,
   }
 
   return(

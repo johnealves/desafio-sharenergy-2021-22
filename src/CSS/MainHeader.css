@@ -7,10 +7,6 @@
   width: 100%;
 }
 
-.main-header-container a {
-  color: #7e7a75;
-}
-
 .main-header-container a:hover {
   color: #000;
 }
@@ -18,3 +14,8 @@
 .main-header-container img {
   max-width: 12rem;
 }
+
+/* .login-button {
+  background-color: #0D3131;
+} */
+

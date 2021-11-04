@@ -33,13 +33,13 @@ const CardClient = ({ client }) => {
       </section>
       <hr/>
       <div>
-        <div className="usina-controller">
+        <div>
           Usinas:
         </div>
         {client.usinas.map(({ usinaId, percentualDeParticipacao }, index) => {
           return (
-            <div key={ index }>
-              <p className="power-plant-by-client">
+            <div key={ index } >
+              <p className="power-plant-by-client" className="usina-controller">
                 <span>id: { usinaId }&nbsp;&nbsp;Participação: { percentualDeParticipacao }%</span>
                 {(usinaId === 1) && <span>
                   Valor Gerado(Dia): {
