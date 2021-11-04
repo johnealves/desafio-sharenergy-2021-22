@@ -43,3 +43,5 @@ Para rodar este projeto corretamente é necessario:
  - Na raiz do repositorio clonado digite o comando "npm start" esse comando ira inicia a aplicação na porta 3001, isso tambem ira criar um database no mongo com o nome "sharenergy-johnealves", caso ja exista os dados do banco serão resetados
  - Com o backend rodando va para pasta raiz do repositorio desafio-sharenergy-2021-22 mude para a branch "johnealves" e rode o projeto com o comando npm start.
  (obs.: No frontend va ate pasta Services, lá tera um arquivo chamado api.jsx, neste arquivo a uma variavel chamada localhost, certifique-se de que esta variavel tem o endereço localhost do sistema local para que o backend funcione corretamente).
+
+ Link para video de explicação: https://youtu.be/XiGtN9haZbk
