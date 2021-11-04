@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import CardClient from "../Components/CardClient";
 import Button from "@material-ui/core/Button" ;
@@ -6,11 +6,9 @@ import AddIcon from '@material-ui/icons/Add';
 import "../CSS/Clients.css";
 import api from "../Services/api";
 import { Link } from "react-router-dom";
-import EnergyContext from "../Context/EnergyContext";
 
 const Clients = () => {
   const [dataClients, setDataClients] = useState([]);
-  const { userActive } = useContext(EnergyContext);
   const [redirectlogin, setRedirectLogin] = useState(false);
   const history = useHistory()
 

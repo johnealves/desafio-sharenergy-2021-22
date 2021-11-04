@@ -39,7 +39,7 @@ const CardClient = ({ client }) => {
         {client.usinas.map(({ usinaId, percentualDeParticipacao }, index) => {
           return (
             <div key={ index } >
-              <p className="power-plant-by-client" className="usina-controller">
+              <p className="power-plant-by-client usina-controller">
                 <span>id: { usinaId }&nbsp;&nbsp;Participação: { percentualDeParticipacao }%</span>
                 {(usinaId === 1) && <span>
                   Valor Gerado(Dia): {

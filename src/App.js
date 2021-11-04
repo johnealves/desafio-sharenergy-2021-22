@@ -1,11 +1,10 @@
-import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Home from './Pages/Home';
 import Clients from './Pages/Clients';
 import MainHeader from './Components/MainHeader';
-import { EnergyProvider } from './Context/EnergyProvider';
 import FormClient from './Components/FormClient';
 import Login from './Pages/Login';
+import './App.css';
 
 function App() {
   return (

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Button, FormControl, TextField } from '@material-ui/core';
-import { Box } from '@material-ui/system';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../CSS/Login.css'
 import api from '../Services/api';
 import EnergyContext from '../Context/EnergyContext';
