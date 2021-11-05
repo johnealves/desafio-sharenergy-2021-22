@@ -18,7 +18,8 @@ Este projeto foi realizado utilizando a versão LTS 16.13.0 do Node e o MongoDB 
 Para rodar este projeto foi criado um backend para alimentar a aplicação que usa os dados dos arquivos dadosUsina.json dadosUsuario.json coma referencia. 
 
 Para rodar este projeto corretamente é necessario:
- - Na branch "johnealvesfigueiredo" na raiz do projeto para para a pasta de backend com o comando "cd backend" e inicie a plicação com o comando "npm start", a aplicação ira rodar na porta 3001 e ira preecher o banco de dados com os dados dos arquivos dadosUsina.json dadosUsuario.json (obs.: o banco utilizado foi o MongoDB certifique de que o mongo esteja ativo de forma local ou aplicação dará erro.)
+ - Na branch "johnealvesfigueiredo" na raiz do projeto para para a pasta de backend com o comando "cd backend"
+ - inicie a plicação com o comando "npm start", a aplicação ira rodar na porta 3001 e ira preecher o banco de dados com os dados dos arquivos dadosUsina.json dadosUsuario.json (obs.: o banco utilizado foi o MongoDB certifique de que o mongo esteja ativo de forma local ou aplicação dará erro.)
  - Com o backend rodando use os comando "cd .." e "depois "cd frontend"
  - Na raiz da pasta fronte end use o comando "npm start" para rodar aplicação
  (obs.: No frontend va ate pasta Services, lá tera um arquivo chamado api.jsx, neste arquivo a uma variavel chamada localhost, certifique-se de que esta variavel tem o endereço localhost do sistema local para que o backend funcione corretamente).
